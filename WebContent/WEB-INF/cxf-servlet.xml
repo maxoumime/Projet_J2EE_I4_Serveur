@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://cxf.apache.org/configuration/beans"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://www.cxf.apache.org/bindings/soap
+    http://www.cxf.apache.org/bindings/schemas/configuration/soap.xsd
+    http://cxf.apache.org/jaxws
+    http://cxf.apache.org/schemas/jaxws.xsd">
+
+	<jaxws:server serviceClass="fr.i4.firstproject.controller.soap.ProduitService"
+		address="/produit" serviceBean="#produit">
+	</jaxws:server>
+	<bean id="produit"
+		class="fr.epsi.projet.controller.soap.ProduitServiceImpl" />
+
+</beans>

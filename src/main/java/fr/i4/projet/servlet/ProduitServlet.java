@@ -1,5 +1,7 @@
 package fr.i4.projet.servlet;
 
+import fr.i4.projet.bean.Produit;
+import fr.i4.projet.listener.MainListener;
 
 import fr.i4.projet.bean.Produit;
 import fr.i4.projet.listener.MainListener;

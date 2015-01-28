@@ -1,6 +1,7 @@
 package fr.i4.projet.service;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.UUID;
 
 /**
@@ -15,12 +16,12 @@ public class TokenCheck {
         return tokens.containsValue(token);
     }
 
-    public static String addToken(String user, String password){
+    public static String addToken(String userpassword){
 
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
 
-        tokens.put(user+":"+password, randomUUIDString);
+        tokens.put(userpassword, randomUUIDString);
         return randomUUIDString;
     }
 }

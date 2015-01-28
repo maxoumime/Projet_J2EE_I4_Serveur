@@ -13,5 +13,4 @@ public interface ProduitService {
     public Produit getProduit(String ref);
     public boolean checkQuantity(Produit produit);
 
-
 }

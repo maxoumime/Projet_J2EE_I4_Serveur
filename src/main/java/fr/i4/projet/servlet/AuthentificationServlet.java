@@ -1,15 +1,15 @@
 package fr.i4.projet.servlet;
 
-import fr.i4.projet.service.TokenCheck;
-import fr.i4.projet.service.UsersService;
+import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.LinkedList;
+
+import fr.i4.projet.service.TokenCheck;
+import fr.i4.projet.service.UsersService;
 
 /**
  * Created by maxoumime on 28/01/15.
