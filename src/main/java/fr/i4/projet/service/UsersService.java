@@ -1,15 +1,33 @@
 package fr.i4.projet.service;
 
+import fr.i4.projet.bean.Client;
+import org.apache.log4j.Logger;
+
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-/**
- * Created by maxoumime on 28/01/15.
- */
 public class UsersService {
 
-    private static ConcurrentLinkedQueue<String> allowedUsers = new ConcurrentLinkedQueue<String>();
+    private static ConcurrentLinkedQueue<Client> allowedUsers = new ConcurrentLinkedQueue<Client>();
 
-    public static boolean isUser(String user, String password) { return isUser(user + ":" + password); }
-    public static boolean isUser(String userpassword) { return allowedUsers.contains(userpassword); }
-    public static void addUser(String user, String password) { allowedUsers.add(user+":"+password);}
+    public static boolean isUser(Client client) {
+
+        for (Client allowedUser : allowedUsers) {
+            Logger.getRootLogger().info(allowedUser);
+            if(allowedUser.getLogin().equals(client.getLogin())
+                    && allowedUser.getPassword().equals(client.getPassword()))
+                return true;
+        }
+
+        return false;
+    }
+
+    public static boolean isUser(String user, String password) {
+        Client client = new Client();
+        client.setLogin(user);
+        client.setPassword(password);
+
+        return isUser(client);
+    }
+
+    public static void addUser(Client user) { allowedUsers.add(user); }
 }
