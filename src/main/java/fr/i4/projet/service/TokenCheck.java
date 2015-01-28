@@ -16,12 +16,12 @@ public class TokenCheck {
         return tokens.containsValue(token);
     }
 
-    public static String addToken(String userpassword){
+    public static String addToken(String user, String password){
 
         UUID uuid = UUID.randomUUID();
         String randomUUIDString = uuid.toString();
 
-        tokens.put(userpassword, randomUUIDString);
+        tokens.put(user+":"+password, randomUUIDString);
         return randomUUIDString;
     }
 }

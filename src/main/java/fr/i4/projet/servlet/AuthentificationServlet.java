@@ -1,6 +1,7 @@
 package fr.i4.projet.servlet;
 
 import fr.i4.projet.service.TokenCheck;
+import fr.i4.projet.service.UsersService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,16 +20,12 @@ public class AuthentificationServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private LinkedList<String> allowedUsers = new LinkedList<String>();
-
     /**
      * @see HttpServlet#HttpServlet()
      */
     public AuthentificationServlet() {
         super();
         // TODO Auto-generated constructor stub
-
-        allowedUsers.add("john:doe");
     }
 
     /**
@@ -38,12 +35,10 @@ public class AuthentificationServlet extends HttpServlet {
         String user = request.getParameter("user");
         String password = request.getParameter("password");
 
-        String userpassword = user+":"+"password";
-
-        if(user != null && password != null && allowedUsers.contains(userpassword)){
+        if(user != null && password != null && UsersService.isUser(user, password)){
 
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
-            response.getWriter().append(TokenCheck.addToken(userpassword));
+            response.getWriter().append(TokenCheck.addToken(user, password));
 
         } else response.setStatus(HttpServletResponse.SC_FORBIDDEN);
 
