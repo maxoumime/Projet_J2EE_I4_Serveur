@@ -3,8 +3,6 @@ package fr.i4.projet.servlet;
 
 import fr.i4.projet.bean.Produit;
 import fr.i4.projet.listener.MainListener;
-import fr.i4.projet.service.ProduitService;
-import fr.i4.projet.service.impl.ProduitServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

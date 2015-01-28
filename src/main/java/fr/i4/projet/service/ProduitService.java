@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProduitService {
 
     public List<Produit> getProduits();
-    public Produit getProduit();
+    public Produit getProduit(String ref);
     public boolean checkQuantity(Produit produit);
 
 
