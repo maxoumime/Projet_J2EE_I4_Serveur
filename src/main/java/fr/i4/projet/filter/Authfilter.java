@@ -12,12 +12,10 @@ import java.io.IOException;
 public class Authfilter implements Filter {
 
 
-    @Override
     public void init(FilterConfig filterConfig) throws ServletException {
 
     }
 
-    @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
         String token = servletRequest.getParameter("token");
@@ -31,7 +29,6 @@ public class Authfilter implements Filter {
 
     }
 
-    @Override
     public void destroy() {
 
     }

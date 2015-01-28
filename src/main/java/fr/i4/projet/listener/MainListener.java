@@ -48,13 +48,11 @@ public class MainListener implements ServletContextListener {
 
     }
 
-    @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         Client john = new Client("John Doe", "john", "doe");
         UsersService.addUser(john);
     }
 
-    @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
 
     }

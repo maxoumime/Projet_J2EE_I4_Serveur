@@ -9,10 +9,10 @@
     http://cxf.apache.org/jaxws
     http://cxf.apache.org/schemas/jaxws.xsd">
 
-	<jaxws:server serviceClass="fr.i4.firstproject.controller.soap.ProduitService"
+	<jaxws:server serviceClass="fr.i4.projet.service.ProduitService"
 		address="/produit" serviceBean="#produit">
 	</jaxws:server>
 	<bean id="produit"
-		class="fr.epsi.projet.controller.soap.ProduitServiceImpl" />
+		class="fr.epsi.projet.service.impl.ProduitServiceImpl" />
 
 </beans>
