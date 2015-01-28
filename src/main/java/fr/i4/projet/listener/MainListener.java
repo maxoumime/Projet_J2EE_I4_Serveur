@@ -1,5 +1,7 @@
 package fr.i4.projet.listener;
 
+import java.sql.Connection;
+
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
@@ -17,4 +19,5 @@ public class MainListener implements ServletContextListener {
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
 
     }
+
 }

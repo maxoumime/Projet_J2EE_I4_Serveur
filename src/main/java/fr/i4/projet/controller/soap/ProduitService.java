@@ -1,4 +1,4 @@
-package fr.i4.projet.soap;
+package fr.i4.projet.controller.soap;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import fr.i4.projet.bean.Produit;
 
 
 @WebService(name="ProductService", serviceName="ProductService")
-public interface ProductService {
-	public Produit getProduit(@WebParam(name="id") String id);
-	public List<Produit> getAllProduit();
+public interface ProduitService {
+	public Produit getProduit(@WebParam(name="id") String ref);
+	public List<Produit> getProduits();
 }

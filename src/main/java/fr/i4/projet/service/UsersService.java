@@ -1,6 +1,5 @@
 package fr.i4.projet.service;
 
-import java.util.LinkedList;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**

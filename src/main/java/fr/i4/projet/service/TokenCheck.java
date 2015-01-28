@@ -1,7 +1,6 @@
 package fr.i4.projet.service;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.UUID;
 
 /**
