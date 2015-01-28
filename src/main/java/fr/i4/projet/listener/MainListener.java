@@ -7,9 +7,11 @@ import fr.i4.projet.bean.Produit;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 import java.util.ArrayList;
 import java.util.List;
 
+@WebListener
 public class MainListener implements ServletContextListener {
 
     private static List<Produit> listProduits;
