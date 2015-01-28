@@ -1,6 +1,11 @@
 package fr.i4.projet.servlet;
 
 
+import fr.i4.projet.bean.Produit;
+import fr.i4.projet.listener.MainListener;
+import fr.i4.projet.service.ProduitService;
+import fr.i4.projet.service.impl.ProduitServiceImpl;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,8 +27,12 @@ public class ProduitServlet extends HttpServlet {
         String reference = request.getParameter("reference");
         String quantityOrdered = request.getParameter("quantityOrdered");
 
-        if(quantityOrdered != null && reference != null){
-
+        if(Integer.parseInt(quantityOrdered) != 0 && reference != null){
+            for (Produit produit : MainListener.getListProduits()) {
+                if(produit.getQuantity() >= Integer.parseInt(quantityOrdered)){
+                    produit.setQuantity((produit.getQuantity() - Integer.parseInt(quantityOrdered)));
+                }
+            }
         }
 
 
