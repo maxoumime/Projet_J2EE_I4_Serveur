@@ -1,10 +1,5 @@
 package fr.i4.projet.service.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,71 +15,23 @@ public class ProductServiceImpl implements ProduitService {
 	public List<Produit> getProduits() {
 		List<Produit> produits = new ArrayList<Produit>();
 
-		try {
-			ResultSet resultats = null;
-
-			try {
-				Statement stmt = MainListener.
-				resultats = stmt.executeQuery(requete);
-
-				while (resultats.next()) {
-					Produit prod = new Produit();
-					prod.setNom(resultats.getString(1));
-					prod.setReference(resultats.getString(2));
-					prod.setQuantity(resultats.getInt(3));
-					produits.add(prod);
-				}
-
-				resultats.close();
-				MainListener.getConnection().close();
-				
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		produits = MainListener.getListProduits();
 
 		return produits;
 	}
 
 	
-	public Produit getProduit(String id) {
-		Produit prod = null;
-
-		try {
-			ResultSet resultats = null;
-
-			try {
-				Connection conn = MainListener.getConnection();
-				PreparedStatement stmt = conn
-						.prepareStatement("SELECT * FROM USERS WHERE ID=?");
-				stmt.setString(1, id);
-				resultats = stmt.executeQuery();
-				if (resultats.next()) {
-					prod = new Produit();
-					prod.setNom(resultats.getString(1));
-					prod.setReference(resultats.getString(2));
-					prod.setQuantity(resultats.getInt(3));
-				}
-
-				resultats.close();
-				MainListener.getConnection().close();
-				
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return prod;
-	}
-
 
 	public boolean checkQuantity(Produit produit) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+
+	public Produit getProduit(String ref) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
