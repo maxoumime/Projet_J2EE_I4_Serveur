@@ -8,9 +8,11 @@ import fr.i4.projet.bean.Client;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
 import java.util.ArrayList;
 import java.util.List;
 
+@WebListener
 public class MainListener implements ServletContextListener {
 
     private static List<Produit> listProduits;
@@ -47,13 +49,11 @@ public class MainListener implements ServletContextListener {
 
     }
 
-    @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
         Client john = new Client("John Doe", "john", "doe");
         UsersService.addUser(john);
     }
 
-    @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
 
     }
