@@ -12,12 +12,13 @@ import org.springframework.stereotype.Service;
 
 import fr.i4.projet.bean.Produit;
 import fr.i4.projet.service.ProductService;
+import fr.i4.projet.service.ProduitService;
 
 @Service
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProduitService {
 
 	@Override
-	public List<Produit> getAllProduit() {
+	public List<Produit> getProduits() {
 		List<Produit> produits = new ArrayList<Produit>();
 
 		try {
@@ -50,8 +51,8 @@ public class ProductServiceImpl implements ProductService {
 
 	
 	@Override
-	public Contact getContact(String id) {
-		Contact contact = null;
+	public Produit getProduit(String id) {
+		Produit prod = null;
 
 		try {
 			ResultSet resultats = null;
@@ -63,10 +64,9 @@ public class ProductServiceImpl implements ProductService {
 				stmt.setString(1, id);
 				resultats = stmt.executeQuery();
 				if (resultats.next()) {
-					contact = new Contact();
-					contact.setLogin(resultats.getString(1));
-					contact.setName(resultats.getString(2));
-					contact.setPassword(resultats.getString(3));
+					prod = new Produit();
+					prod.setNom(resultats.getString(1));
+					prod.setQuantity(resultats.getInt(2));
 				}
 
 				resultats.close();
@@ -79,7 +79,7 @@ public class ProductServiceImpl implements ProductService {
 			e.printStackTrace();
 		}
 
-		return contact;
+		return prod;
 	}
 
 }
