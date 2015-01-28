@@ -1,9 +1,8 @@
 package fr.i4.projet.service;
 
-import fr.i4.projet.bean.Client;
-import org.apache.log4j.Logger;
-
 import java.util.concurrent.ConcurrentLinkedQueue;
+
+import fr.i4.projet.bean.Client;
 
 public class UsersService {
 
@@ -12,7 +11,7 @@ public class UsersService {
     public static boolean isUser(Client client) {
 
         for (Client allowedUser : allowedUsers) {
-            Logger.getRootLogger().info(allowedUser);
+          
             if(allowedUser.getLogin().equals(client.getLogin())
                     && allowedUser.getPassword().equals(client.getPassword()))
                 return true;
