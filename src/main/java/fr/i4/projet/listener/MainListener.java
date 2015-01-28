@@ -1,9 +1,10 @@
 package fr.i4.projet.listener;
 
-import fr.i4.projet.bean.Client;
+
 import fr.i4.projet.service.UsersService;
 
 import fr.i4.projet.bean.Produit;
+import fr.i4.projet.bean.Client;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
