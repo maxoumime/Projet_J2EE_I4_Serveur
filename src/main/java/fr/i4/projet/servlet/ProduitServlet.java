@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Created by MhD on 28/01/15.
  */
-@WebServlet("/Commande")
+@WebServlet("/rest/Commande")
 public class ProduitServlet extends HttpServlet {
 
     public ProduitServlet(){

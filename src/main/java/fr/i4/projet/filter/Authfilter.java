@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter("*")
+@WebFilter("/rest/*")
 public class Authfilter implements Filter {
 
 
@@ -24,17 +24,17 @@ public class Authfilter implements Filter {
 
         String token = request.getParameter("token");
 
-        System.out.println(token);
+        //System.out.println(token);
 
         if(token == null)
             token = request.getRequestURI().replaceAll("^.*token=", "");
 
-        System.out.println(token);
+        //System.out.println(token);
 
         if( (token != null && TokenCheck.checkToken(token)) || request.getRequestURI().contains("login"))
             filterChain.doFilter(servletRequest, servletResponse);
         else {
-            response.getWriter().append(MainListener.getListProduits().toString());
+            //response.getWriter().append(MainListener.getListProduits().toString());
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
         }
     }

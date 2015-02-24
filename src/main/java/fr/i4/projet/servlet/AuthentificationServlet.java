@@ -15,7 +15,7 @@ import fr.i4.projet.service.UsersService;
  * Created by maxoumime on 28/01/15.
  */
 
-@WebServlet("/login")
+@WebServlet("/rest/login")
 public class AuthentificationServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
