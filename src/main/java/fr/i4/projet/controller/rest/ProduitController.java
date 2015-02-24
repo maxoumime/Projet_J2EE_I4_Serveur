@@ -21,8 +21,7 @@ public class ProduitController {
     private ProduitService produitService;
 
     @RequestMapping(value="/produit", method= RequestMethod.GET)
-    public @ResponseBody
-    List<Produit> getContacts(){
+    public @ResponseBody List<Produit> getProduits(){
         return produitService.getProduits();
     }
 }
