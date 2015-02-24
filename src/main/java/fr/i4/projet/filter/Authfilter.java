@@ -1,5 +1,6 @@
 package fr.i4.projet.filter;
 
+import fr.i4.projet.listener.MainListener;
 import fr.i4.projet.service.TokenCheck;
 
 import javax.servlet.*;
@@ -18,15 +19,24 @@ public class Authfilter implements Filter {
 
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
-        String token = servletRequest.getParameter("token");
-
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         HttpServletResponse response = (HttpServletResponse)servletResponse;
 
+        String token = request.getParameter("token");
+
+        System.out.println(token);
+
+        if(token == null)
+            token = request.getRequestURI().replaceAll("^.*token=", "");
+
+        System.out.println(token);
+
         if( (token != null && TokenCheck.checkToken(token)) || request.getRequestURI().contains("login"))
             filterChain.doFilter(servletRequest, servletResponse);
-        else response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-
+        else {
+            response.getWriter().append(MainListener.getListProduits().toString());
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+        }
     }
 
     public void destroy() {

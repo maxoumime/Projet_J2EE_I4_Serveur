@@ -21,4 +21,9 @@ public class Produit {
 
     public void setReference(String reference) {this.reference = reference;}
 
+    @Override
+    public String toString(){
+        return nom+":"+reference+":"+quantity;
+    }
+
 }
