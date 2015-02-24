@@ -14,6 +14,42 @@
     <script src="js/app.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <!-- Header Barre de Navigation -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Projet JEE</a>
+        </div>
+        <!------------------>
+
+        <!-- Liens de la Barre de Navigation -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Produits<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Commande</a></li>
+                        <li><a href="#">Voir Stock</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Recherche...">
+                </div>
+                <button type="submit" class="btn btn-default">OK</button>
+            </form>
+        </div>
+        <!------------------>
+    </div>
+</nav>
     <div class="container-fluid">
         <div class="row center-block text-center">
             <div class="col-lg-6">
@@ -23,6 +59,10 @@
                 <button class="btn btn-danger">NE ME CLIQUE PAS !!!</button>
             </div>
         </div>
+    </div>
+    <div style="padding-top: 200px;">
+        <img src="https://scontent-fra.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10636081_10205039355525562_8685241933046932787_n.jpg?oh=0beee6cf2eb6ae1c30bf01a51a2db51e&oe=558A2023"
+             />
     </div>
 </body>
 </html>
