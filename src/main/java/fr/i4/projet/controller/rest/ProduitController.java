@@ -17,8 +17,9 @@ import java.util.List;
 @Controller
 public class ProduitController {
 
+    //TODO passer en REST normal
 
-    @Qualifier("produit")
+ //   @Qualifier("produit")
     @Autowired
     private ProduitService produitService;
 
