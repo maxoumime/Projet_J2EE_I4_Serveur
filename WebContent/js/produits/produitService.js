@@ -1,7 +1,8 @@
 /**
  * Created by MhD on 26/02/15.
  */
-app.factory('produitFactory', function ($http, $q){
+var produitService = angular.module('produitService',[]);
+produitService.factory('produitService', function ($http, $q){
     var factory = {};
     factory.getlist = function(){
         return $http.get('http://localhost:8080/rest/produit?format=json'). // Ajout de {'Access-Control-Allow-Origin': 'localhost:*'}
