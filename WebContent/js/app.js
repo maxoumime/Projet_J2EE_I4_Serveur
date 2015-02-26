@@ -1,1 +1,1 @@
-var app = angular.module('app', ['produitController']);
+var app = angular.module('app', ['produitController', 'produitService']);
