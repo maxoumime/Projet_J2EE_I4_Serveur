@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.i4.projet.service.TokenCheck;
 import fr.i4.projet.service.UsersService;
 
@@ -19,6 +20,7 @@ import fr.i4.projet.service.UsersService;
 public class AuthentificationServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
+    private ObjectMapper mapper = new ObjectMapper();
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -32,6 +34,7 @@ public class AuthentificationServlet extends HttpServlet {
      * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         String user = request.getParameter("user");
         String password = request.getParameter("password");
 

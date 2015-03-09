@@ -1,15 +1,12 @@
 /**
  * Created by MhD on 26/02/15.
  */
-var produitService = angular.module('produitService',[]);
-produitService.factory('produitService', function ($http, $q){
+produitModule.factory('produitService', ['$http', '$rootScope', function ($http, $rootScope){
     var factory = {};
     factory.getlist = function(){
-        return $http.get('http://localhost:8080/rest/produit?format=json'). // Ajout de {'Access-Control-Allow-Origin': 'localhost:*'}
-            then(function(response) {                                       // Pour effectuer requete HTTP sans credentials
-                console.log(response);
-                return (response.data.itemsToReturn);
-            });
-    }
+        return $http.get('http://localhost:8080/rest/produit?token='
+            + $rootScope.token
+        );
+    };
     return factory;
-});
+}]);
