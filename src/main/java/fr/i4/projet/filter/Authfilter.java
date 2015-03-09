@@ -22,6 +22,8 @@ public class Authfilter implements Filter {
         HttpServletRequest request = (HttpServletRequest)servletRequest;
         HttpServletResponse response = (HttpServletResponse)servletResponse;
 
+        response.addHeader("Access-Control-Allow-Origin", "*");
+
         String token = request.getParameter("token");
 
         //System.out.println(token);
