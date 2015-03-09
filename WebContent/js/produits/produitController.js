@@ -9,8 +9,7 @@ produitModule.controller('ProduitCtrl', ['$scope', '$rootScope', '$location', '$
 
     produitService.getlist().success(function(data){
         if(data != undefined) {
-            $scope.produits = data;
+            $scope.products = data;
         }
-        console.log(typeof $scope.produits)
     });
 }]);
