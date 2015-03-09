@@ -1,15 +1,15 @@
 package fr.i4.projet.service.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-import org.springframework.stereotype.Service;
 
 import fr.i4.projet.bean.Produit;
 import fr.i4.projet.listener.MainListener;
 import fr.i4.projet.service.ProduitService;
 
-@Service
+
 public class ProductServiceImpl implements ProduitService {
 
 	public List<Produit> getProduits() {
@@ -33,5 +33,6 @@ public class ProductServiceImpl implements ProduitService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

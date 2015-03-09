@@ -3,6 +3,13 @@ package fr.i4.projet.controller.rest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import fr.i4.projet.bean.Produit;
 import fr.i4.projet.listener.MainListener;
+import fr.i4.projet.service.ProduitService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
