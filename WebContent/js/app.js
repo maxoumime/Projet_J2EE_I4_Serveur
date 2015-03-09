@@ -10,6 +10,5 @@ var app = angular.module('EPSIapp', [
  * Main configuration
  */
 app.config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/', {templateUrl: 'templates/welcome.html'});
     $routeProvider.otherwise({redirectTo: '/'});
 }]);

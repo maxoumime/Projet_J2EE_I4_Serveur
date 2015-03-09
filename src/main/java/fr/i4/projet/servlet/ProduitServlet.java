@@ -25,14 +25,21 @@ public class ProduitServlet extends HttpServlet {
         String reference = request.getParameter("reference");
         String quantityOrdered = request.getParameter("quantityOrdered");
 
-        if(Integer.parseInt(quantityOrdered) != 0 && reference != null){
-            for (Produit produit : MainListener.getListProduits()) {
-                if(produit.getQuantity() >= Integer.parseInt(quantityOrdered)){
-                    produit.setQuantity((produit.getQuantity() - Integer.parseInt(quantityOrdered)));
+        boolean found = false;
+
+        if(Integer.parseInt(quantityOrdered) != 0) {
+            if (reference != null) {
+                for (Produit produit : MainListener.getListProduits()) {
+                    if (produit.getQuantity() >= Integer.parseInt(quantityOrdered)) {
+                        produit.setQuantity((produit.getQuantity() - Integer.parseInt(quantityOrdered)));
+                        found = true;
+                        break;
+                    }
                 }
-            }
-        }
+            }else response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
+        }else response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
 
-
+        if(!found)
+            response.setStatus(HttpServletResponse.SC_NOT_FOUND);
     }
 }

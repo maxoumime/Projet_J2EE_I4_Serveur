@@ -6,7 +6,9 @@ produitModule.factory('produitService', ['$http', '$rootScope', function ($http,
     factory.getlist = function(){
         return $http.get('http://localhost:8080/rest/produit?token='
             + $rootScope.token
-        );
+        ).error(function(data){
+                delete $rootScope.token;
+            });
     };
     return factory;
 }]);

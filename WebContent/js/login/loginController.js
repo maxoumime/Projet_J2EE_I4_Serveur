@@ -18,8 +18,8 @@ loginModule.controller('LoginCtrl', ['$scope', '$rootScope', '$location', '$rout
             },
             data: {user: $scope.user, password: $scope.password}
         }).success(function (data) {
-            $rootScope.token = data;
-            $location.path('/produit')
+            $rootScope.token = data
+            $location.path('/')
         });
     }
 

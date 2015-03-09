@@ -6,10 +6,11 @@ produitModule.controller('ProduitCtrl', ['$scope', '$rootScope', '$location', '$
 
     if($rootScope.token === undefined)
         $location.path("/login");
-
-    produitService.getlist().success(function(data){
-        if(data != undefined) {
-            $scope.products = data;
-        }
-    });
+    else {
+        produitService.getlist().success(function (data) {
+            if (data != undefined) {
+                $scope.products = data;
+            }
+        });
+    }
 }]);
