@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+	<div class="panel-heading"><h3>List of products</h3></div>
+		<div class="panel-body">
+    		<p> To order a product, please click on the tag button</p>
+ 		</div>
+ 	<table class="table">
+	 	<thead>
+			<tr>
+	            <th>Name</th>
+	            <th>Reference</th>
+	            <th>Quantity</th>
+	            <th>Order</th>
+	          </tr>
+		</thead>
+		<tbody ng-controller="ProduitCtrl">
+				<tr ng-repeat="product in products">
+					<td class="product-name"> {{product.nom}} </td> 
+					<td class="product-reference"> {{product.reference}} </td>
+					<td class=" quantity"> {{product.quantity}} </td> 
+					<td> 
+						<div class="input-group input-group-sm">
+							<span class="glyphicon glyphicon-tag input-group-addon"  id="sizing-addon3" aria-hidden="true"></span>
+							<input type="text" class="form-control" placeholder="Quantity to order" aria-describedby="sizing-addon3">
+						</div>
+					</td>							
+				</tr>
+		</tbody>
+	</table>
+</div>
+
+         
