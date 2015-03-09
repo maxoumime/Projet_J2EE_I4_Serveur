@@ -4,8 +4,6 @@
 
 produitModule.controller('ProduitCtrl', ['$scope', '$rootScope', '$location', '$routeParams', 'produitService', function($scope, $rootScope, $location, $routeParams, produitService) {
 
-produitModule.controller('ProduitCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
- 
     if($rootScope.token === undefined)
         $location.path("/login");
 
