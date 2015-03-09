@@ -1,15 +1,15 @@
 package fr.i4.projet.service.impl;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 
 import fr.i4.projet.bean.Produit;
 import fr.i4.projet.listener.MainListener;
 import fr.i4.projet.service.ProduitService;
+import org.springframework.stereotype.Service;
 
-
+@Service
 public class ProductServiceImpl implements ProduitService {
 
 	public List<Produit> getProduits() {
