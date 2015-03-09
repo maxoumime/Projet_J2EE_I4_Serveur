@@ -1,19 +1,13 @@
-var app = angular.module('produits', []);
-//Création du Controller
-app.controller('produitList', function ($scope, $http) {
-    $scope.refreshGrid = function (page) {
-        //Appel REST sur l'URL
-        $http({
-            url: 'rest/produit',
-            method: 'GET',
-            params: {
-                page: page
-            }
-        }).success(function (data) {
-            $scope.persons = data;
-        });
-    };
+// Declare app level module which depends on filters, and services
+var app = angular.module('EPSIapp', [
+    'ngRoute',
+    'produit.module'
+]);
 
-    $scope.$watch('', function () {
-    }, true);
-});
+/**
+ * Main configuration
+ */
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider.when('/', {templateUrl: 'templates/welcome.html'});
+    $routeProvider.otherwise({redirectTo: '/'});
+}]);
