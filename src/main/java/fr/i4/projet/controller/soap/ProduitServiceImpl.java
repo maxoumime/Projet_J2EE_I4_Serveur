@@ -14,7 +14,6 @@ public class ProduitServiceImpl extends SpringBeanAutowiringSupport implements f
 	@Autowired
 	private fr.i4.projet.service.ProduitService produitService;
 
-
 	@Override
 	public List<Produit> getProduits() {
 		return produitService.getProduits();

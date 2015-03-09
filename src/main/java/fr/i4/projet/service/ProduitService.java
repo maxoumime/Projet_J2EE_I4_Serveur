@@ -9,7 +9,7 @@ import fr.i4.projet.bean.Produit;
 /**
  * Created by MhD on 28/01/15.
  */
-@WebService(name="ProductServiceImpl", serviceName="ProductServiceImpl")
+
 public interface ProduitService {
 
     public List<Produit> getProduits();
