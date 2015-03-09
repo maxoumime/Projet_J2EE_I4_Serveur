@@ -9,5 +9,6 @@ var app = angular.module('EPSIapp', [
  */
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/', {templateUrl: 'templates/welcome.html'});
+    $routeProvider.when('/login', {templateUrl: 'templates/login.html'});
     $routeProvider.otherwise({redirectTo: '/'});
 }]);
