@@ -34,7 +34,7 @@ public class ProduitServlet extends HttpServlet {
                         produit.setQuantity((produit.getQuantity() - Integer.parseInt(quantityOrdered)));
                         found = true;
                         break;
-                    }
+                    }else response.setStatus(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE);
                 }
             }else response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
         }else response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
