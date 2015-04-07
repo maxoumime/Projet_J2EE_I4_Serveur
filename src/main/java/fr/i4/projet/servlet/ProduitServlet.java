@@ -30,12 +30,15 @@ public class ProduitServlet extends HttpServlet {
         if(Integer.parseInt(quantityOrdered) != 0) {
             if (reference != null) {
                 for (Produit produit : MainListener.getListProduits()) {
-                    if (produit.getQuantity() >= Integer.parseInt(quantityOrdered)) {
-                        produit.setQuantity((produit.getQuantity() - Integer.parseInt(quantityOrdered)));
+                    if(produit.getReference().equals(reference)){
                         found = true;
-                        response.setStatus(HttpServletResponse.SC_ACCEPTED);
-                        break;
-                    }else response.setStatus(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE);
+                        if (produit.getQuantity() >= Integer.parseInt(quantityOrdered)) {
+                            produit.setQuantity((produit.getQuantity() - Integer.parseInt(quantityOrdered)));
+                            response.setStatus(HttpServletResponse.SC_ACCEPTED);
+                            break;
+                        }else response.setStatus(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE);
+                    }
+
                 }
             }else response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
         }else response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
