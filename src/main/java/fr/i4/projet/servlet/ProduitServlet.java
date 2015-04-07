@@ -33,6 +33,7 @@ public class ProduitServlet extends HttpServlet {
                     if (produit.getQuantity() >= Integer.parseInt(quantityOrdered)) {
                         produit.setQuantity((produit.getQuantity() - Integer.parseInt(quantityOrdered)));
                         found = true;
+                        response.setStatus(HttpServletResponse.SC_ACCEPTED);
                         break;
                     }else response.setStatus(HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE);
                 }
