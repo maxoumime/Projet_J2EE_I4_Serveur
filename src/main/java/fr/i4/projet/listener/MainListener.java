@@ -37,7 +37,7 @@ public class MainListener implements ServletContextListener {
 
         produit = new Produit();
         produit.setReference("9IK7J");
-        produit.setNom("Chaise Bleu");
+        produit.setNom("Chaise Bleue");
         produit.setQuantity(8);
         listProduits.add(produit);
 
